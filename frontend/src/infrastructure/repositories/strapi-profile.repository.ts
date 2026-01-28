@@ -9,8 +9,8 @@ export class StrapiProfileRepository implements ProfileRepository {
     // Try different endpoint variations for Strapi 5.x compatibility
     // Single types in Strapi 5.x may use singular or plural endpoints
     const endpoints = [
-  
-      '/profile', // Plural without populate
+      '/profile?populate=*', // Com populate para trazer mídia (photo e cvPdf) - formato que funciona no Strapi 5.x
+      '/profile', // Fallback sem populate
     ]
 
     let lastError: Error | null = null

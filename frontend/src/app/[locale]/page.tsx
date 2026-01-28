@@ -68,7 +68,7 @@ export default async function HomePage() {
         <SkillsSection skills={portfolioData.skills} />
         <ProjectsSection projects={portfolioData.projects} featured />
         <CertificationsSection certifications={portfolioData.certifications} />
-        <ContactSection />
+        <ContactSection profile={portfolioData.profile} />
         <Footer profile={portfolioData.profile} />
       </main>
     )

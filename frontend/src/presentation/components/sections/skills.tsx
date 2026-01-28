@@ -2,6 +2,7 @@
 
 import { Skill, SkillCategory } from '@/domain/entities/skill.entity'
 import { useTranslations } from 'next-intl'
+import { SkillIcon } from '@/lib/skill-icons'
 
 interface SkillsProps {
   skills: Skill[]
@@ -29,7 +30,8 @@ export function SkillsSection({ skills }: SkillsProps) {
     {} as Record<SkillCategory, Skill[]>
   )
 
-  const getLevelLabel = (level: number) => {
+  const getLevelLabel = (level?: number) => {
+    if (!level) return null
     const labels = ['Iniciante', 'Básico', 'Intermediário', 'Avançado', 'Expert']
     return labels[level - 1] || 'Desconhecido'
   }
@@ -45,18 +47,35 @@ export function SkillsSection({ skills }: SkillsProps) {
             </h3>
             <div className="space-y-3">
               {categorySkills.map((skill) => (
-                <div key={skill.id} className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">{skill.name}</span>
-                    <span className="text-xs text-muted-foreground">
-                      {getLevelLabel(skill.level)}
-                    </span>
-                  </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
-                    <div
-                      className="h-full bg-primary transition-all"
-                      style={{ width: `${(skill.level / 5) * 100}%` }}
-                    />
+                <div
+                  key={skill.id}
+                  className="group rounded-lg border bg-card p-3 transition-all hover:shadow-md hover:border-primary/50"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0">
+                      <SkillIcon
+                        name={skill.name}
+                        className="h-6 w-6 text-primary transition-transform group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="flex-1 space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium">{skill.name}</span>
+                        {skill.level && (
+                          <span className="text-xs text-muted-foreground">
+                            {getLevelLabel(skill.level)}
+                          </span>
+                        )}
+                      </div>
+                      {skill.level && (
+                        <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
+                          <div
+                            className="h-full bg-primary transition-all"
+                            style={{ width: `${(skill.level / 5) * 100}%` }}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

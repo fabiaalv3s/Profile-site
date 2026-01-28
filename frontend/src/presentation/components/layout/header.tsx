@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/routing'
 import { Button } from '../ui/button'
+import { ThemeToggle } from '../ui/theme-toggle'
 import { Globe } from 'lucide-react'
 
 export function Header() {
@@ -51,6 +52,7 @@ export function Header() {
           </Link>
         </nav>
         <div className="ml-auto flex items-center space-x-2">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"

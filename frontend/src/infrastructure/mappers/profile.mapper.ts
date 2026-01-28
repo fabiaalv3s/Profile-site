@@ -15,20 +15,20 @@ export function mapStrapiProfileToDomain(response: StrapiProfileResponse): Profi
     email: data.email,
     linkedin: data.linkedin || undefined,
     github: data.github || undefined,
-    photo: data.photo?.data
+    photo: data.photo
       ? {
-          url: data.photo.data.url.startsWith('http')
-            ? data.photo.data.url
-            : `${STRAPI_URL}${data.photo.data.url}`,
-          alternativeText: data.photo.data.alternativeText,
+          url: data.photo.url.startsWith('http')
+            ? data.photo.url
+            : `${STRAPI_URL}${data.photo.url}`,
+          alternativeText: data.photo.alternativeText,
         }
       : undefined,
-    cvPdf: data.cvPdf?.data
+    cvPdf: data.cvPdf
       ? {
-          url: data.cvPdf.data.url.startsWith('http')
-            ? data.cvPdf.data.url
-            : `${STRAPI_URL}${data.cvPdf.data.url}`,
-          name: data.cvPdf.data.name || '',
+          url: data.cvPdf.url.startsWith('http')
+            ? data.cvPdf.url
+            : `${STRAPI_URL}${data.cvPdf.url}`,
+          name: data.cvPdf.name || '',
         }
       : undefined,
   }

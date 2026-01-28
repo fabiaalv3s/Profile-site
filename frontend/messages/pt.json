@@ -49,7 +49,8 @@
     },
     "contact": {
       "title": "Entre em Contato",
-      "description": "Estou sempre aberta a novas oportunidades e projetos interessantes."
+      "description": "Estou sempre aberta a novas oportunidades e projetos interessantes.",
+      "whatsappButton": "Fale comigo no WhatsApp"
     }
   }
 }

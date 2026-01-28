@@ -49,7 +49,8 @@
     },
     "contact": {
       "title": "Get In Touch",
-      "description": "I'm always open to new opportunities and interesting projects."
+      "description": "I'm always open to new opportunities and interesting projects.",
+      "whatsappButton": "Contact me on WhatsApp"
     }
   }
 }

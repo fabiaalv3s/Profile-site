@@ -4,6 +4,6 @@ export interface Skill {
   id: number
   name: string
   category: SkillCategory
-  level: number // 1-5
+  level?: number // 1-5, opcional
   order: number
 }
