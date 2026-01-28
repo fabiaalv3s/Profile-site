@@ -1,0 +1,55 @@
+{
+  "common": {
+    "downloadCv": "Baixar CV",
+    "contact": "Contato",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "certifications": "Certificações",
+    "viewProject": "Ver Projeto",
+    "viewAllProjects": "Ver Todos os Projetos",
+    "current": "Atual",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "name": "Nome",
+    "email": "Email",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "sendMessage": "Enviar Mensagem",
+    "messageSent": "Mensagem enviada com sucesso!",
+    "errorSending": "Erro ao enviar mensagem. Tente novamente.",
+    "required": "Campo obrigatório",
+    "invalidEmail": "Email inválido"
+  },
+  "sections": {
+    "hero": {
+      "title": "Desenvolvedora Full Stack",
+      "subtitle": "Criando soluções eficazes e de qualidade"
+    },
+    "about": {
+      "title": "Sobre Mim"
+    },
+    "experience": {
+      "title": "Experiência Profissional"
+    },
+    "education": {
+      "title": "Formação Acadêmica"
+    },
+    "skills": {
+      "title": "Habilidades"
+    },
+    "projects": {
+      "title": "Projetos",
+      "featured": "Destaques"
+    },
+    "certifications": {
+      "title": "Certificações"
+    },
+    "contact": {
+      "title": "Entre em Contato",
+      "description": "Estou sempre aberta a novas oportunidades e projetos interessantes."
+    }
+  }
+}

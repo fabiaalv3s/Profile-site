@@ -1,0 +1,55 @@
+{
+  "common": {
+    "downloadCv": "Download CV",
+    "contact": "Contact",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "viewProject": "View Project",
+    "viewAllProjects": "View All Projects",
+    "current": "Current",
+    "send": "Send",
+    "sending": "Sending...",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "messageSent": "Message sent successfully!",
+    "errorSending": "Error sending message. Please try again.",
+    "required": "Required field",
+    "invalidEmail": "Invalid email"
+  },
+  "sections": {
+    "hero": {
+      "title": "Full Stack Developer",
+      "subtitle": "Creating effective and quality solutions"
+    },
+    "about": {
+      "title": "About Me"
+    },
+    "experience": {
+      "title": "Professional Experience"
+    },
+    "education": {
+      "title": "Academic Education"
+    },
+    "skills": {
+      "title": "Skills"
+    },
+    "projects": {
+      "title": "Projects",
+      "featured": "Featured"
+    },
+    "certifications": {
+      "title": "Certifications"
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "I'm always open to new opportunities and interesting projects."
+    }
+  }
+}
