@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "educations",
+  "info": {
+    "singularName": "education",
+    "pluralName": "educations",
+    "displayName": "Education"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "institution": {
+      "type": "string",
+      "required": true
+    },
+    "course": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
