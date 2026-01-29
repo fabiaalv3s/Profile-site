@@ -13,7 +13,8 @@ import {
 export class StrapiProjectRepository implements ProjectRepository {
   async getProjects(): Promise<Project[]> {
     const endpoints = [
-      
+      '/projects?populate=*',
+      '/projects?populate[image]=*',
       '/projects',
     ]
 

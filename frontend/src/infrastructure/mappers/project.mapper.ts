@@ -16,14 +16,27 @@ export function mapStrapiProjectsToDomain(
     stack: item.stack || undefined,
     demoUrl: item.demoUrl || undefined,
     githubUrl: item.githubUrl || undefined,
-    image: item.image?.data
-      ? {
+    image: (() => {
+      // Tenta formato direto primeiro (Strapi 5.x com populate=*)
+      if (item.image && 'url' in item.image && typeof item.image.url === 'string') {
+        return {
+          url: item.image.url.startsWith('http')
+            ? item.image.url
+            : `${STRAPI_URL}${item.image.url}`,
+          alternativeText: item.image.alternativeText,
+        }
+      }
+      // Fallback para formato com wrapper data
+      if (item.image && typeof item.image === 'object' && 'data' in item.image && item.image.data) {
+        return {
           url: item.image.data.url.startsWith('http')
             ? item.image.data.url
             : `${STRAPI_URL}${item.image.data.url}`,
           alternativeText: item.image.data.alternativeText,
         }
-      : undefined,
+      }
+      return undefined
+    })(),
     featured: item.featured,
     order: item.order,
   }))
@@ -42,14 +55,27 @@ export function mapStrapiProjectToDomain(
     stack: data.stack || undefined,
     demoUrl: data.demoUrl || undefined,
     githubUrl: data.githubUrl || undefined,
-    image: data.image?.data
-      ? {
+    image: (() => {
+      // Tenta formato direto primeiro (Strapi 5.x com populate=*)
+      if (data.image && 'url' in data.image && typeof data.image.url === 'string') {
+        return {
+          url: data.image.url.startsWith('http')
+            ? data.image.url
+            : `${STRAPI_URL}${data.image.url}`,
+          alternativeText: data.image.alternativeText,
+        }
+      }
+      // Fallback para formato com wrapper data
+      if (data.image && typeof data.image === 'object' && 'data' in data.image && data.image.data) {
+        return {
           url: data.image.data.url.startsWith('http')
             ? data.image.data.url
             : `${STRAPI_URL}${data.image.data.url}`,
           alternativeText: data.image.data.alternativeText,
         }
-      : undefined,
+      }
+      return undefined
+    })(),
     featured: data.featured,
     order: data.order,
   }

@@ -59,6 +59,12 @@ export default async function HomePage() {
   try {
     const portfolioData = await getPortfolioData()
 
+    // Log para debug (apenas em desenvolvimento)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[HomePage] Projects count:', portfolioData.projects.length)
+      console.log('[HomePage] Featured projects:', portfolioData.projects.filter(p => p.featured).length)
+    }
+
     return (
       <main>
         <Hero profile={portfolioData.profile} />
@@ -66,7 +72,9 @@ export default async function HomePage() {
         <ExperienceSection experiences={portfolioData.experiences} />
         <EducationSection educations={portfolioData.educations} />
         <SkillsSection skills={portfolioData.skills} />
-        <ProjectsSection projects={portfolioData.projects} featured />
+        {portfolioData.projects.length > 0 && (
+          <ProjectsSection projects={portfolioData.projects} featured />
+        )}
         <CertificationsSection certifications={portfolioData.certifications} />
         <ContactSection profile={portfolioData.profile} />
         <Footer profile={portfolioData.profile} />
