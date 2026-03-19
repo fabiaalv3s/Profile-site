@@ -7,7 +7,17 @@ export const strapiSkillResponseSchema = z.object({
       id: z.number(),
       documentId: z.string().optional(),
       name: z.string(),
-      category: z.enum(['frontend', 'backend', 'tools', 'languages', 'other']),
+      category: z
+        .enum([
+          'frontend',
+          'backend',
+          'tools',
+          'languages',
+          'banco_de_dados',
+          'banco de dados',
+          'other',
+        ])
+        .transform((val) => (val === 'banco de dados' ? 'banco_de_dados' : val)),
       level: z.number().min(1).max(5).nullable().transform((val) => val ?? undefined),
       order: z.number().nullable().transform((val) => val ?? 0),
       createdAt: z.string().optional(),

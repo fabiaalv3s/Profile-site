@@ -25,8 +25,20 @@
   },
   "sections": {
     "hero": {
+      "greeting": "Hi! I'm",
       "title": "Full Stack Developer",
-      "subtitle": "Creating effective and quality solutions"
+      "supportText": "I build scalable systems, robust APIs and modern experiences with React and Node.js.",
+      "subtitle": "Building scalable applications with clean architecture.",
+      "downloadCvPdf": "Download CV pdf",
+      "enterContact": "Get in Touch",
+      "statYears": "years of experience",
+      "statProjects": "projects delivered",
+      "statSpecialty": "ERP & APIs",
+      "statSpecialtySub": "specialty",
+      "availableBadge": "Available for opportunities",
+      "highlight1": "2+ years building ERP systems",
+      "highlight2": "Experience with React, Node.js & APIs",
+      "highlight3": "Currently working with modern web stacks"
     },
     "about": {
       "title": "About Me"
@@ -45,7 +57,8 @@
       "featured": "Featured"
     },
     "certifications": {
-      "title": "Certifications"
+      "title": "Certifications",
+      "viewCertificate": "View certificate full size"
     },
     "contact": {
       "title": "Get In Touch",

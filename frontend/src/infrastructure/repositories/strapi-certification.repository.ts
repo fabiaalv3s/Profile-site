@@ -7,7 +7,7 @@ import { mapStrapiCertificationsToDomain } from '../mappers/certification.mapper
 export class StrapiCertificationRepository implements CertificationRepository {
   async getCertifications(): Promise<Certification[]> {
     const endpoints = [
-  
+      '/certifications?populate=*',
       '/certifications',
     ]
 

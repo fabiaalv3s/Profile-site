@@ -482,7 +482,10 @@ export interface ApiCertificationCertification
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     issueDate: Schema.Attribute.Date & Schema.Attribute.Required;
     issuer: Schema.Attribute.String & Schema.Attribute.Required;
     link: Schema.Attribute.String;
@@ -688,7 +691,7 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
   };
   attributes: {
     category: Schema.Attribute.Enumeration<
-      ['frontend', 'backend', 'tools', 'other']
+      ['frontend', 'backend', 'tools', 'banco de dados', 'other']
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;

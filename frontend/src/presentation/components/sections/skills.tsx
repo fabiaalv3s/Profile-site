@@ -11,6 +11,7 @@ interface SkillsProps {
 const categoryLabels: Record<SkillCategory, string> = {
   frontend: 'Frontend',
   backend: 'Backend',
+  banco_de_dados: 'Banco de Dados',
   tools: 'Ferramentas',
   languages: 'Linguagens',
   other: 'Outros',

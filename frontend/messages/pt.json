@@ -25,8 +25,20 @@
   },
   "sections": {
     "hero": {
+      "greeting": "Olá! Me chamo",
       "title": "Desenvolvedora Full Stack",
-      "subtitle": "Criando soluções eficazes e de qualidade"
+      "supportText": "Crio sistemas escaláveis, APIs robustas e experiências modernas com React e Node.js.",
+      "subtitle": "Construindo aplicações escaláveis com arquitetura limpa.",
+      "downloadCvPdf": "Baixar CV (PDF)",
+      "enterContact": "Entrar em Contato",
+      "statYears": "anos de experiência",
+      "statProjects": "projetos entregues",
+      "statSpecialty": "ERP & APIs",
+      "statSpecialtySub": "especialidade",
+      "availableBadge": "Disponível para oportunidades",
+      "highlight1": "Mais de 2 anos construindo sistemas ERP",
+      "highlight2": "Experiência com React, Node.js e APIs",
+      "highlight3": "Atualmente trabalhando com stacks web modernas"
     },
     "about": {
       "title": "Sobre Mim"
@@ -45,7 +57,8 @@
       "featured": "Destaques"
     },
     "certifications": {
-      "title": "Certificações"
+      "title": "Certificações",
+      "viewCertificate": "Ver certificado em tamanho maior"
     },
     "contact": {
       "title": "Entre em Contato",

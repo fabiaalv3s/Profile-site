@@ -1,12 +1,11 @@
 import { z } from 'zod'
 
-// Strapi 5.x: mídia pode vir em formato direto ou com attributes, dependendo do populate
+// Strapi 5.x: mídia pode vir em formato direto ou com attributes; url pode vir null em alguns casos
 const strapiMediaSchema = z.object({
-  id: z.number(),
-  url: z.string(),
+  id: z.number().optional(),
+  url: z.string().nullable().optional(),
   name: z.string().optional(),
-  alternativeText: z.string().optional(),
-  // Suporte para formato antigo (com attributes) caso ainda exista
+  alternativeText: z.string().nullable().optional(),
   attributes: z.object({
     name: z.string(),
     alternativeText: z.string().optional(),
@@ -14,9 +13,9 @@ const strapiMediaSchema = z.object({
   }).optional(),
 }).transform((media) => ({
   id: media.id,
-  url: media.url || media.attributes?.url || '',
-  name: media.name || media.attributes?.name || '',
-  alternativeText: media.alternativeText || media.attributes?.alternativeText,
+  url: media.url ?? media.attributes?.url ?? '',
+  name: media.name ?? media.attributes?.name ?? '',
+  alternativeText: media.alternativeText ?? media.attributes?.alternativeText ?? undefined,
 }))
 
 // Strapi 5.x: campos vêm diretamente em cada item do array, sem wrapper attributes
@@ -29,9 +28,15 @@ export const strapiCertificationResponseSchema = z.object({
       issuer: z.string(),
       issueDate: z.string(),
       link: z.string().optional().nullable(),
-      image: z.object({
-        data: strapiMediaSchema.nullable().optional(),
-      }).nullable().optional(),
+      // Strapi 4: image.data; Strapi 5: image objeto ou array (populate=* pode vir como array)
+      image: z
+        .union([
+          z.object({ data: strapiMediaSchema.nullable().optional() }),
+          strapiMediaSchema,
+          z.array(strapiMediaSchema),
+        ])
+        .nullable()
+        .optional(),
       order: z.number().nullable().transform((val) => val ?? 0),
       createdAt: z.string().optional(),
       updatedAt: z.string().optional(),

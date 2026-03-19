@@ -139,7 +139,7 @@ export function ProjectsSection({ projects, featured = false }: ProjectsProps) {
               {project.stack && project.stack.length > 0 && (
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {project.stack.slice(0, 4).map((tech, techIndex) => (
+                    {project.stack.map((tech, techIndex) => (
                       <Badge
                         key={techIndex}
                         variant="secondary"
@@ -149,11 +149,6 @@ export function ProjectsSection({ projects, featured = false }: ProjectsProps) {
                         <span>{tech}</span>
                       </Badge>
                     ))}
-                    {project.stack.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.stack.length - 4}
-                      </Badge>
-                    )}
                   </div>
                 </CardContent>
               )}

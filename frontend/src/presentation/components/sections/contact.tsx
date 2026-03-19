@@ -51,7 +51,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
         <Button
           asChild
           size="lg"
-          className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 py-6 h-auto shadow-lg hover:shadow-xl transition-all"
+          className="h-12 rounded-xl bg-emerald-600 px-6 text-base text-white shadow-lg transition-all hover:bg-emerald-500 hover:shadow-xl"
         >
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <FaWhatsapp className="mr-2 h-5 w-5" />

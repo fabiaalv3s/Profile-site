@@ -6,24 +6,19 @@ import {
   SiJavascript,
   SiNodedotjs,
   SiMysql,
-  SiMicrosoftsqlserver,
   SiGithub,
   SiDelphi,
-  SiJava,
   SiHtml5,
   SiCss3,
   SiTailwindcss,
   SiNextdotjs,
   SiGit,
-  SiScrum,
   SiMongodb,
   SiPostgresql,
   SiDocker,
   SiLinux,
-  SiWindows,
-  SiVisualstudiocode,
 } from 'react-icons/si'
-import { FaGithub, FaReact, FaCode } from 'react-icons/fa'
+import { FaGithub, FaReact, FaCode, FaLink } from 'react-icons/fa'
 
 // Tipo para o componente de ícone
 type IconComponent = React.ComponentType<{ className?: string; size?: number | string }>
@@ -49,15 +44,15 @@ const skillIconMap: Record<string, IconComponent> = {
 
   // Backend
   delphi: SiDelphi,
-  horse: SiDelphi, // Horse é framework Delphi
-  java: SiJava,
+  horse: SiDelphi,
+  java: FaCode,
   'java script': SiJavascript,
 
   // Databases
   mysql: SiMysql,
-  'sql server': SiMicrosoftsqlserver,
-  sqlserver: SiMicrosoftsqlserver,
-  'microsoft sql server': SiMicrosoftsqlserver,
+  'sql server': FaCode,
+  sqlserver: FaCode,
+  'microsoft sql server': FaCode,
   postgresql: SiPostgresql,
   postgres: SiPostgresql,
   mongodb: SiMongodb,
@@ -66,17 +61,24 @@ const skillIconMap: Record<string, IconComponent> = {
   // Tools
   github: SiGithub,
   git: SiGit,
-  scrum: SiScrum,
+  scrum: FaCode,
   docker: SiDocker,
   linux: SiLinux,
-  windows: SiWindows,
-  vscode: SiVisualstudiocode,
-  'visual studio code': SiVisualstudiocode,
+  windows: FaCode,
+  vscode: FaCode,
+  'visual studio code': FaCode,
 
   // Patterns/Concepts
   solid: FaCode,
   mvc: FaCode,
   'clean code': FaCode,
+  api: FaCode,
+  apis: FaCode,
+  "api's": FaCode,
+  integracoes: FaLink,
+  'integrações': FaLink,
+  integracao: FaLink,
+  'integração': FaLink,
 }
 
 /**

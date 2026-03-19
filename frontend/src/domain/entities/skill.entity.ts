@@ -1,4 +1,10 @@
-export type SkillCategory = 'frontend' | 'backend' | 'tools' | 'languages' | 'other'
+export type SkillCategory =
+  | 'frontend'
+  | 'backend'
+  | 'tools'
+  | 'languages'
+  | 'banco_de_dados'
+  | 'other'
 
 export interface Skill {
   id: number
